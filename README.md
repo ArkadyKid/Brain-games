@@ -1,2 +1,2 @@
-#nodejs-package
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+# nodejs-package
+[![Maintainability](https://api.codeclimate.com/v1/badges/b4174ee7f828f10066da/maintainability)](https://codeclimate.com/github/ArkadyKid/frontend-project-lvl1/maintainability)
