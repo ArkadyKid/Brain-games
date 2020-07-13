@@ -16,12 +16,16 @@
     "url": "https://github.com/ArkadyKid/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/ArkadyKid/frontend-project-lvl1#readme",
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
   "devDependencies": {
-    "readline-sync": "^1.4.10"
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
   },
   "description": ""
 }
