@@ -1,4 +1,4 @@
-import readLineSync from "readline-sync";
+import readLineSync from 'readline-sync';
 
 export default (game, task) => {
   console.log('Welcome to the Brain Games!');

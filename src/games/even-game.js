@@ -9,8 +9,7 @@ export default () => {
   if (answer === whichAnswerRight) {
     console.log('Correct!');
     return true;
-  } else {
-    console.log(`"${answer}" is wrong answer ;(. Correct answer was "${whichAnswerRight}".`);
-    return false;
   }
+  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${whichAnswerRight}".`);
+  return false;
 };
