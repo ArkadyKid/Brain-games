@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import gameWrapper from '../src/index.js';
+import { gameWrapper } from '../src/index.js';
 
 import evenGame from '../src/games/even-game.js';
 
