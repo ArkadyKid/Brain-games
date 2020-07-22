@@ -14,6 +14,7 @@ export default () => {
   const sign = getSign();
   const expression = `${a} ${sign} ${b}`;
   const answer = questionAnswer(expression);
-  const getResult = () => eval(Number(a) + sign + Number(b));
-  return answerHandler(Number(answer), getResult())
+  const result = eval(Number(a) + sign + Number(b));
+
+  return answerHandler(Number(answer), result);
 };
