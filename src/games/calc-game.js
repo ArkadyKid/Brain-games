@@ -14,7 +14,6 @@ export default () => {
   const sign = getSign();
   const expression = `${a} ${sign} ${b}`;
   const answer = questionAnswer(expression);
-  /* eslint-disable no-eval */
   const result = eval(Number(a) + sign + Number(b));
 
   return answerHandler(Number(answer), result);
