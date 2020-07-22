@@ -4,7 +4,7 @@ export default () => {
   const randomNumber = getRandomNumber();
   const answer = questionAnswer(randomNumber);
   const isEven = ((randomNumber % 2) === 0);
-  const whichAnswerRight = isEven ? 'yes' : 'no';
+  const result = isEven ? 'yes' : 'no';
 
-  return answerHandler(answer, whichAnswerRight);
+  return answerHandler(answer, result);
 };
