@@ -1,6 +1,9 @@
 import readLineSync from 'readline-sync';
 
-export const getRandomNumber = () => String(Math.ceil(Math.random() * 100));
+export const getRandomNumber = () => {
+  const maxNumber = 100;
+  return String(Math.ceil(Math.random() * maxNumber));
+};
 
 export const questionAnswer = (question) => {
   console.log(`Question: ${question}`);
