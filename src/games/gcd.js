@@ -1,10 +1,10 @@
 import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
 
 export default () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = getRandomNumber(100);
+  const secondNumber = getRandomNumber(100);
   const answer = questionAnswer(`${firstNumber} ${secondNumber}`);
-  const createResult = () => {
+  const getResult = () => {
     if (firstNumber === secondNumber) {
       return firstNumber;
     }
@@ -22,5 +22,5 @@ export default () => {
     return result;
   };
 
-  return answerHandler(answer, String(createResult()));
+  return answerHandler(answer, String(getResult()));
 };

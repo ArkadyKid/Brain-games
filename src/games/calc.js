@@ -9,8 +9,8 @@ export default () => {
     3: '*',
   };
   const getSign = () => signs[getNumberOfSign()];
-  const a = getRandomNumber();
-  const b = getRandomNumber();
+  const a = getRandomNumber(100);
+  const b = getRandomNumber(100);
   const sign = getSign();
   const expression = `${a} ${sign} ${b}`;
   const answer = questionAnswer(expression);

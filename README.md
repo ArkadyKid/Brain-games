@@ -10,3 +10,5 @@ brain-gcd
 [![asciicast](https://asciinema.org/a/rGM5DOf9OX58n1c4VYO6pAGUV.png)](https://asciinema.org/a/rGM5DOf9OX58n1c4VYO6pAGUV)
 brain-progression
 [![asciicast](https://asciinema.org/a/W8b1uSfxaIG1UW7VAp9LYMDvL.png)](https://asciinema.org/a/W8b1uSfxaIG1UW7VAp9LYMDvL)
+brain-prime
+[![asciicast](https://asciinema.org/a/SeWk3hDDrHaSD8lxnl4KHQr5S.png)](https://asciinema.org/a/SeWk3hDDrHaSD8lxnl4KHQr5S)
