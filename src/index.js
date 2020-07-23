@@ -7,7 +7,7 @@ export const questionAnswer = (question) => {
   return readLineSync.question('Your answer:');
 };
 
-export const answerHandler = (answer, result) => {
+export const isAnswerCorrect = (answer, result) => {
   if (answer === result) {
     console.log('Correct!');
     return true;
@@ -17,14 +17,13 @@ export const answerHandler = (answer, result) => {
 };
 
 export const gameWrapper = (game, task) => {
-  const countOfTries = 3;
-
+  const triesCount = 3;
   console.log('Welcome to the Brain Games!');
   const userName = readLineSync.question('May i have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(task);
   let counter = 0;
-  while (counter !== countOfTries) {
+  while (counter !== triesCount) {
     if (game()) {
       counter += 1;
     } else {

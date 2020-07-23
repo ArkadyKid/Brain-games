@@ -1,4 +1,4 @@
-import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
+import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const number = getRandomNumber(100);
@@ -6,5 +6,5 @@ export default () => {
   const isEven = ((number % 2) === 0);
   const result = isEven ? 'yes' : 'no';
 
-  return answerHandler(String(answer), result);
+  return isAnswerCorrect(String(answer), result);
 };

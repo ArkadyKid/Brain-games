@@ -1,4 +1,4 @@
-import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
+import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const number = getRandomNumber(1000);
@@ -13,5 +13,5 @@ export default () => {
   };
   const result = isPrime() ? 'yes' : 'no';
 
-  return answerHandler(answer, result);
+  return isAnswerCorrect(answer, result);
 };

@@ -1,4 +1,4 @@
-import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
+import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const signsCount = 3;
@@ -16,5 +16,5 @@ export default () => {
   const answer = questionAnswer(expression);
   const result = eval(`${a} ${sign} ${b}`);
 
-  return answerHandler(answer, String(result));
+  return isAnswerCorrect(answer, String(result));
 };

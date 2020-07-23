@@ -1,4 +1,4 @@
-import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
+import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const numbersCount = 10;
@@ -20,5 +20,5 @@ export default () => {
     return initialArr.join(' ');
   };
   const answer = questionAnswer(getCreateProgressionResult());
-  return answerHandler(answer, String(result));
+  return isAnswerCorrect(answer, String(result));
 };

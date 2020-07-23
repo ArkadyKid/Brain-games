@@ -1,4 +1,4 @@
-import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
+import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const firstNumber = getRandomNumber(100);
@@ -22,5 +22,5 @@ export default () => {
     return result;
   };
 
-  return answerHandler(answer, String(getResult()));
+  return isAnswerCorrect(answer, String(getResult()));
 };
