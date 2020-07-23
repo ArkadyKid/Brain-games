@@ -1,8 +1,8 @@
 import { getRandomNumber, answerHandler, questionAnswer } from '../index.js';
 
 export default () => {
-  const countOfSign = 3;
-  const getNumberOfSign = () => Math.ceil(Math.random() * countOfSign);
+  const signsCount = 3;
+  const getNumberOfSign = () => Math.ceil(Math.random() * signsCount);
   const signs = {
     1: '-',
     2: '+',
