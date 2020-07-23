@@ -2,7 +2,7 @@ import readLineSync from 'readline-sync';
 
 export const getRandomNumber = () => {
   const maxNumber = 100;
-  return String(Math.ceil(Math.random() * maxNumber));
+  return Math.ceil(Math.random() * maxNumber);
 };
 
 export const questionAnswer = (question) => {
@@ -20,14 +20,14 @@ export const answerHandler = (answer, result) => {
 };
 
 export const gameWrapper = (game, task) => {
-  const numberOfTry = 3;
+  const countOfTries = 3;
 
   console.log('Welcome to the Brain Games!');
   const userName = readLineSync.question('May i have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(task);
   let counter = 0;
-  while (counter !== numberOfTry) {
+  while (counter !== countOfTries) {
     if (game()) {
       counter += 1;
     } else {

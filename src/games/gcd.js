@@ -4,7 +4,7 @@ export default () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const answer = questionAnswer(`${firstNumber} ${secondNumber}`);
-  const getResult = () => {
+  const createResult = () => {
     if (firstNumber === secondNumber) {
       return firstNumber;
     }
@@ -19,8 +19,8 @@ export default () => {
         result = i;
       }
     }
-    return String(result);
+    return result;
   };
 
-  return answerHandler(answer, getResult());
+  return answerHandler(answer, String(createResult()));
 };
