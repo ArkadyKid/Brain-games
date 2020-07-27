@@ -1,8 +1,10 @@
-import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
+import getRandomNumber from '../utils.js';
+import { isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const minNumber = 0;
   const maxNumber = 100;
+
   const firstNumber = getRandomNumber(minNumber, maxNumber);
   const secondNumber = getRandomNumber(minNumber, maxNumber);
   const answer = questionAnswer(`${firstNumber} ${secondNumber}`);

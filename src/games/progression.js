@@ -1,9 +1,11 @@
-import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
+import getRandomNumber from '../utils.js';
+import { isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const numbersCount = 10;
   const minNumber = 0;
   const maxNumber = 100;
+
   const initialNumber = getRandomNumber(minNumber, maxNumber);
   const missingPosition = Math.ceil(Math.random() * numbersCount);
   const step = getRandomNumber(minNumber, maxNumber);

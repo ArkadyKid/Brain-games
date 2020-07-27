@@ -1,11 +1,5 @@
 import readLineSync from 'readline-sync';
 
-export const getRandomNumber = (minNumber, maxNumber) => {
-  const diff = maxNumber - minNumber;
-  const randomDiffNumber = Math.ceil(Math.random() * diff);
-  return minNumber + randomDiffNumber;
-};
-
 export const questionAnswer = (question) => {
   console.log(`Question: ${question}`);
   return readLineSync.question('Your answer:');

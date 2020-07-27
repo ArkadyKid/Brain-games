@@ -1,12 +1,15 @@
-import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
+import getRandomNumber from '../utils.js';
+import { isAnswerCorrect, questionAnswer } from '../index.js';
+
+const isEven = (number) => ((number % 2) === 0);
 
 export default () => {
   const minNumber = 0;
   const maxNumber = 100;
+
   const number = getRandomNumber(minNumber, maxNumber);
   const answer = questionAnswer(number);
-  const isEven = ((number % 2) === 0);
-  const result = isEven ? 'yes' : 'no';
+  const result = isEven(number) ? 'yes' : 'no';
 
   return isAnswerCorrect(String(answer), result);
 };
