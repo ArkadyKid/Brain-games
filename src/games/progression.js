@@ -2,9 +2,11 @@ import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
   const numbersCount = 10;
-  const initialNumber = getRandomNumber(100);
+  const minNumber = 0;
+  const maxNumber = 100;
+  const initialNumber = getRandomNumber(minNumber, maxNumber);
   const missingPosition = Math.ceil(Math.random() * numbersCount);
-  const step = getRandomNumber(100);
+  const step = getRandomNumber(minNumber, maxNumber);
   const getProgression = () => {
     const arr = [];
     arr.push(initialNumber);

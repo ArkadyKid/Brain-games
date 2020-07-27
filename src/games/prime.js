@@ -1,7 +1,9 @@
 import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
-  const number = getRandomNumber(1000);
+  const minNumber = 0;
+  const maxNumber = 1000;
+  const number = getRandomNumber(minNumber, maxNumber);
   const answer = questionAnswer(number);
   const isPrime = () => {
     for (let i = 2; i < (number / 2); i += 1) {

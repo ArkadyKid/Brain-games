@@ -1,8 +1,10 @@
 import { getRandomNumber, isAnswerCorrect, questionAnswer } from '../index.js';
 
 export default () => {
-  const firstNumber = getRandomNumber(100);
-  const secondNumber = getRandomNumber(100);
+  const minNumber = 0;
+  const maxNumber = 100;
+  const firstNumber = getRandomNumber(minNumber, maxNumber);
+  const secondNumber = getRandomNumber(minNumber, maxNumber);
   const answer = questionAnswer(`${firstNumber} ${secondNumber}`);
   const getResult = () => {
     if (firstNumber === secondNumber) {

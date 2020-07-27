@@ -1,6 +1,10 @@
 import readLineSync from 'readline-sync';
 
-export const getRandomNumber = (maxNumber) => Math.ceil(Math.random() * maxNumber);
+export const getRandomNumber = (minNumber, maxNumber) => {
+  const diff = maxNumber - minNumber;
+  const randomDiffNumber = Math.ceil(Math.random() * diff);
+  return minNumber + randomDiffNumber;
+};
 
 export const questionAnswer = (question) => {
   console.log(`Question: ${question}`);
@@ -22,11 +26,8 @@ export const gameWrapper = (game, task) => {
   const userName = readLineSync.question('May i have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(task);
-  let counter = 0;
-  while (counter !== triesCount) {
-    if (game()) {
-      counter += 1;
-    } else {
+  for (let i = 0; i < triesCount; i += 1) {
+    if (!game()) {
       console.log(`Let's try again, ${userName}!`);
       return;
     }
