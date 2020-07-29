@@ -16,7 +16,9 @@ const getProgression = (number, step) => {
 
 const getQuestion = () => {
   const initialNumber = getRandomNumber(minNumber, maxNumber);
-  const missingPosition = 0;
+  // const missingPosition = 0;
+  const missingPosition = Math.ceil(Math.random() * numbersCount);
+
   const step = getRandomNumber(minNumber, maxNumber);
   const initialArr = getProgression(initialNumber, step);
   const getProgressionResult = () => {
