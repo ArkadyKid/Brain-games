@@ -5,6 +5,8 @@ const numbersCount = 10;
 const minNumber = 0;
 const maxNumber = 100;
 
+let number = 0;
+
 const getProgression = (number, step) => {
   const arr = [];
   arr.push(number);
@@ -16,28 +18,18 @@ const getProgression = (number, step) => {
 
 const getQuestion = () => {
   const initialNumber = getRandomNumber(minNumber, maxNumber);
-  // const missingPosition = 0;
   const missingPosition = Math.ceil(Math.random() * numbersCount);
 
   const step = getRandomNumber(minNumber, maxNumber);
   const initialArr = getProgression(initialNumber, step);
   const getProgressionResult = () => {
-    initialArr[missingPosition] = '..';
+    number = initialArr[missingPosition - 1];
+    initialArr[missingPosition - 1] = '..';
     return initialArr.join(' ');
   };
   return getProgressionResult();
 };
-const getResult = (question) => {
-  const questionArr = question.split(' ');
-  for (let i = 0; i < questionArr.length; i += 1) {
-    if (questionArr[i] === '..') {
-      const step = Number(questionArr[1] - questionArr[0]);
-      const prevNumber = Number(questionArr[i - 1]);
-      const nextNumber = Number(questionArr[i + 1]);
-      return (i === 0) ? String(nextNumber - step) : String(prevNumber + step);
-    }
-  }
-};
+const getResult = () => number;
 
 const task = 'What number is missing in the progression?';
 
