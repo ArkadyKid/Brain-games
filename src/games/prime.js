@@ -1,5 +1,8 @@
 import getRandomNumber from '../utils.js';
-import { isAnswerCorrect, questionAnswer } from '../index.js';
+import gameWrapper from '../index.js';
+
+const minNumber = 0;
+const maxNumber = 1000;
 
 const isPrime = (number) => {
   for (let i = 2; i < (number / 2); i += 1) {
@@ -10,13 +13,14 @@ const isPrime = (number) => {
   return true;
 };
 
-export default () => {
-  const minNumber = 0;
-  const maxNumber = 1000;
-
-  const number = getRandomNumber(minNumber, maxNumber);
-  const answer = questionAnswer(number);
-  const result = isPrime(number) ? 'yes' : 'no';
-
-  return isAnswerCorrect(answer, result);
+const getQuestion = () => {
+  return getRandomNumber(minNumber, maxNumber);
 };
+const getResult = (question) => {
+  return isPrime(question) ? 'yes' : 'no';
+};
+
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+export default () => gameWrapper(task, getQuestion, getResult);
+

@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-import { gameWrapper } from '../src/index.js';
-
 import even from '../src/games/even.js';
 
-const task = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameWrapper(even, task);
+even();

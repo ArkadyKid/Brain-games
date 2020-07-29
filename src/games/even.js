@@ -1,15 +1,13 @@
 import getRandomNumber from '../utils.js';
-import { isAnswerCorrect, questionAnswer } from '../index.js';
+import gameWrapper from '../index.js';
+
+const minNumber = 0;
+const maxNumber = 100;
 
 const isEven = (number) => ((number % 2) === 0);
+const getQuestion = () => getRandomNumber(minNumber, maxNumber);
+const getResult = (question) => isEven(question) ? 'yes' : 'no';
 
-export default () => {
-  const minNumber = 0;
-  const maxNumber = 100;
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const number = getRandomNumber(minNumber, maxNumber);
-  const answer = questionAnswer(number);
-  const result = isEven(number) ? 'yes' : 'no';
-
-  return isAnswerCorrect(String(answer), result);
-};
+export default () => gameWrapper(task, getQuestion, getResult);

@@ -1,28 +1,43 @@
 import getRandomNumber from '../utils.js';
-import { isAnswerCorrect, questionAnswer } from '../index.js';
+import gameWrapper from '../index.js';
 
-export default () => {
-  const numbersCount = 10;
-  const minNumber = 0;
-  const maxNumber = 100;
+const numbersCount = 10;
+const minNumber = 0;
+const maxNumber = 100;
 
+const getProgression = (number, step) => {
+  const arr = [];
+  arr.push(number);
+  for (let i = 1; i < numbersCount; i += 1) {
+    arr.push(arr[i - 1] + step);
+  }
+  return arr;
+};
+
+const getQuestion = () => {
   const initialNumber = getRandomNumber(minNumber, maxNumber);
-  const missingPosition = Math.ceil(Math.random() * numbersCount);
+  const missingPosition = 0;
   const step = getRandomNumber(minNumber, maxNumber);
-  const getProgression = () => {
-    const arr = [];
-    arr.push(initialNumber);
-    for (let i = 1; i < numbersCount; i += 1) {
-      arr.push(arr[i - 1] + step);
-    }
-    return arr;
-  };
-  const initialArr = getProgression();
-  const result = initialArr[missingPosition];
-  const getCreateProgressionResult = () => {
+  const initialArr = getProgression(initialNumber, step);
+  const getProgressionResult = () => {
     initialArr[missingPosition] = '..';
     return initialArr.join(' ');
   };
-  const answer = questionAnswer(getCreateProgressionResult());
-  return isAnswerCorrect(answer, String(result));
+  return getProgressionResult();
 };
+const getResult = (question) => {
+  const questionArr = question.split(' ');
+  for (let i = 0; i < questionArr.length; i += 1) {
+    if (questionArr[i] === '..') {
+      const step = Number(questionArr[1] - questionArr[0]);
+      const prevNumber = Number(questionArr[i - 1]);
+      const nextNumber = Number(questionArr[i + 1]);
+      return (i === 0) ? String(nextNumber - step) : String(prevNumber + step);
+    }
+  }
+};
+
+const task = 'What number is missing in the progression?';
+
+export default () => gameWrapper(task, getQuestion, getResult);
+
