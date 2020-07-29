@@ -5,7 +5,7 @@ const numbersCount = 10;
 const minNumber = 0;
 const maxNumber = 100;
 
-let number = 0;
+let result = 0;
 
 const getProgression = (initialNumber, step) => {
   const arr = [];
@@ -23,7 +23,7 @@ const getQuestion = () => {
   const step = getRandomNumber(minNumber, maxNumber);
   const initialArr = getProgression(initialNumber, step);
   const getProgressionResult = () => {
-    number = initialArr[missingPosition - 1];
+    result = initialArr[missingPosition - 1];
     initialArr[missingPosition - 1] = '..';
     return initialArr.join(' ');
   };
