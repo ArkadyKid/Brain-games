@@ -7,9 +7,9 @@ const maxNumber = 100;
 
 let number = 0;
 
-const getProgression = (number, step) => {
+const getProgression = (initialNumber, step) => {
   const arr = [];
-  arr.push(number);
+  arr.push(initialNumber);
   for (let i = 1; i < numbersCount; i += 1) {
     arr.push(arr[i - 1] + step);
   }
@@ -34,4 +34,3 @@ const getResult = () => number;
 const task = 'What number is missing in the progression?';
 
 export default () => gameWrapper(task, getQuestion, getResult);
-
