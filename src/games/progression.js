@@ -29,7 +29,7 @@ const getQuestion = () => {
   };
   return getProgressionResult();
 };
-const getResult = () => number;
+const getResult = () => result;
 
 const task = 'What number is missing in the progression?';
 
