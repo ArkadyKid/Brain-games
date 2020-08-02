@@ -7,16 +7,17 @@ const questionAnswer = (question) => {
   return readLineSync.question('Your answer:');
 };
 
-export default (task, getQuestion, getResult) => {
+export default (task, generateQuestionObj) => {
   console.log('Welcome to the Brain Games!');
   const userName = readLineSync.question('May i have your name?');
   console.log(`Hello, ${userName}!`);
   console.log(task);
 
   for (let i = 0; i < triesCount; i += 1) {
-    const question = getQuestion();
+    const questionObj = generateQuestionObj();
+    const { question } = questionObj;
     const answer = questionAnswer(question);
-    const result = getResult(question);
+    const { result } = questionObj;
 
     if (answer !== result) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${result}".`);

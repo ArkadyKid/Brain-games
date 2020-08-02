@@ -16,9 +16,14 @@ const isPrime = (number) => {
   return true;
 };
 
-const getQuestion = () => getRandomNumber(minNumber, maxNumber);
-const getResult = (question) => (isPrime(question) ? 'yes' : 'no');
+const generateQuestionObj = () => {
+  const number = getRandomNumber(minNumber, maxNumber);
+  return {
+    question: number,
+    result: (isPrime(number) ? 'yes' : 'no'),
+  };
+};
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export default () => gameWrapper(task, getQuestion, getResult);
+export default () => gameWrapper(task, generateQuestionObj);

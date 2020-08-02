@@ -4,7 +4,7 @@ import gameWrapper from '../index.js';
 const minNumber = 0;
 const maxNumber = 100;
 
-const getNode = (a, b) => {
+const getGcd = (a, b) => {
   const lowerNumber = Math.min(a, b);
   const greaterNumber = Math.max(a, b);
 
@@ -21,16 +21,16 @@ const getNode = (a, b) => {
   }
   return 1;
 };
-const getQuestion = () => {
+
+const generateQuestionObj = () => {
   const a = getRandomNumber(minNumber, maxNumber);
   const b = getRandomNumber(minNumber, maxNumber);
-  return `${a} ${b}`;
-};
-const getResult = (question) => {
-  const [a, b] = question.split(' ');
-  return String(getNode(a, b));
+  return {
+    question: `${a} ${b}`,
+    result: String(getGcd(a, b)),
+  };
 };
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-export default () => gameWrapper(task, getQuestion, getResult);
+export default () => gameWrapper(task, generateQuestionObj);

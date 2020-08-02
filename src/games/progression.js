@@ -5,8 +5,6 @@ const numbersCount = 10;
 const minNumber = 0;
 const maxNumber = 100;
 
-let result = 0;
-
 const getProgression = (initialNumber, step) => {
   const arr = [];
   arr.push(initialNumber);
@@ -16,21 +14,19 @@ const getProgression = (initialNumber, step) => {
   return arr;
 };
 
-const getQuestion = () => {
+const generateQuestionObj = () => {
   const initialNumber = getRandomNumber(minNumber, maxNumber);
   const missingPosition = Math.ceil(Math.random() * numbersCount);
-
   const step = getRandomNumber(minNumber, maxNumber);
   const initialArr = getProgression(initialNumber, step);
-  const getProgressionResult = () => {
-    result = initialArr[missingPosition - 1];
-    initialArr[missingPosition - 1] = '..';
-    return initialArr.join(' ');
+  const result = initialArr[missingPosition - 1];
+  initialArr[missingPosition - 1] = '..';
+  return {
+    question: initialArr.join(' '),
+    result: String(result),
   };
-  return getProgressionResult();
 };
-const getResult = () => String(result);
 
 const task = 'What number is missing in the progression?';
 
-export default () => gameWrapper(task, getQuestion, getResult);
+export default () => gameWrapper(task, generateQuestionObj);
