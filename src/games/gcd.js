@@ -8,8 +8,11 @@ const getGcd = (a, b) => {
   const lowerNumber = Math.min(a, b);
   const greaterNumber = Math.max(a, b);
 
-  if (lowerNumber === 0) {
-    return greaterNumber;
+  switch (lowerNumber) {
+    case 0:
+      return greaterNumber;
+    case 1:
+      return 1;
   }
   if (greaterNumber % lowerNumber === 0) {
     return lowerNumber;
