@@ -13,6 +13,7 @@ const getGcd = (a, b) => {
       return greaterNumber;
     case 1:
       return 1;
+    default:
   }
   if (greaterNumber % lowerNumber === 0) {
     return lowerNumber;
