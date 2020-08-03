@@ -5,25 +5,10 @@ const minNumber = 0;
 const maxNumber = 100;
 
 const getGcd = (a, b) => {
-  const lowerNumber = Math.min(a, b);
-  const greaterNumber = Math.max(a, b);
-
-  switch (lowerNumber) {
-    case 0:
-      return greaterNumber;
-    case 1:
-      return 1;
-    default:
+  if (b) {
+    return getGcd(b, a % b);
   }
-  if (greaterNumber % lowerNumber === 0) {
-    return lowerNumber;
-  }
-  for (let i = greaterNumber % lowerNumber; i > 1; i -= 1) {
-    if ((greaterNumber % i === 0) && (lowerNumber % i === 0)) {
-      return i;
-    }
-  }
-  return 1;
+  return Math.abs(a);
 };
 
 const generateQuestionObj = () => {
