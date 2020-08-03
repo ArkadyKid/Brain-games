@@ -7,6 +7,8 @@ const maxNumber = 100;
 const getGcd = (a, b) => {
   const lowerNumber = Math.min(a, b);
   const greaterNumber = Math.max(a, b);
+  const diff = greaterNumber - lowerNumber;
+  const initialIndex = ((diff > lowerNumber) ? lowerNumber : diff) - 1;
 
   switch (lowerNumber) {
     case 0:
@@ -18,7 +20,7 @@ const getGcd = (a, b) => {
   if (greaterNumber % lowerNumber === 0) {
     return lowerNumber;
   }
-  for (let i = greaterNumber - lowerNumber; i > 1; i -= 1) {
+  for (let i = initialIndex; i > 1; i -= 1) {
     if ((greaterNumber % i === 0) && (lowerNumber % i === 0)) {
       return i;
     }
