@@ -25,7 +25,6 @@ const getGcd = (a, b) => {
       return i;
     }
   }
-
   return 1;
 };
 
