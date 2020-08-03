@@ -18,11 +18,12 @@ const getGcd = (a, b) => {
   if (greaterNumber % lowerNumber === 0) {
     return lowerNumber;
   }
-  for (let i = lowerNumber / 2; i > 1; i -= 1) {
+  for (let i = greaterNumber - lowerNumber; i > 1; i -= 1) {
     if ((greaterNumber % i === 0) && (lowerNumber % i === 0)) {
       return i;
     }
   }
+
   return 1;
 };
 
