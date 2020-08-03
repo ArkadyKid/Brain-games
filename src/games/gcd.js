@@ -9,7 +9,7 @@ const getGcd = (a, b) => {
   const greaterNumber = Math.max(a, b);
 
   if (!Number(a) || !Number(b)) {
-    return 'error';
+    return greaterNumber;
   }
   if (greaterNumber % lowerNumber === 0) {
     return lowerNumber;
