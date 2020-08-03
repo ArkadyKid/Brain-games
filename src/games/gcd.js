@@ -8,7 +8,7 @@ const getGcd = (a, b) => {
   const lowerNumber = Math.min(a, b);
   const greaterNumber = Math.max(a, b);
 
-  if (!Number(a) || !Number(b)) {
+  if (Number(a) === 0 || Number(b) === 0) {
     return greaterNumber;
   }
   if (greaterNumber % lowerNumber === 0) {
