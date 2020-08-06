@@ -1,25 +1,25 @@
 import getRandomNumber from '../utils.js';
-import gameWrapper from '../index.js';
+import startGame from '../index.js';
 
 const minNumber = 0;
 const maxNumber = 100;
 
-const getGcd = (a, b) => {
-  if (b) {
-    return getGcd(b, a % b);
+const getGcd = (firstNumber, secondNumber) => {
+  if (secondNumber) {
+    return getGcd(secondNumber, firstNumber % secondNumber);
   }
-  return Math.abs(a);
+  return Math.abs(firstNumber);
 };
 
-const generateQuestionObj = () => {
-  const a = getRandomNumber(minNumber, maxNumber);
-  const b = getRandomNumber(minNumber, maxNumber);
+const generateQuestionResult = () => {
+  const firstNumber = getRandomNumber(minNumber, maxNumber);
+  const secondNumber = getRandomNumber(minNumber, maxNumber);
   return {
-    question: `${a} ${b}`,
-    result: String(getGcd(a, b)),
+    question: `${firstNumber} ${secondNumber}`,
+    result: String(getGcd(firstNumber, secondNumber)),
   };
 };
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-export default () => gameWrapper(task, generateQuestionObj);
+export default () => startGame(task, generateQuestionResult);
