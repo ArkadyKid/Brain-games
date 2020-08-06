@@ -12,7 +12,7 @@ export default (task, generateQuestionResult) => {
     const questionResult = generateQuestionResult();
     const { question, result } = questionResult;
     console.log(`Question: ${question}`);
-    const answer =  readLineSync.question('Your answer:');
+    const answer = readLineSync.question('Your answer:');
 
     if (answer !== result) {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${result}".`);
