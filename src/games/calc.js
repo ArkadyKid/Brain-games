@@ -4,7 +4,7 @@ import startGame from '../index.js';
 const minNumber = 0;
 const maxNumber = 100;
 
-const generateQuestionResult = () => {
+const generateQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber(minNumber, maxNumber);
   const secondNumber = getRandomNumber(minNumber, maxNumber);
   const operations = {
@@ -24,4 +24,4 @@ const generateQuestionResult = () => {
 
 const task = 'What is the result of the expression?';
 
-export default () => startGame(task, generateQuestionResult);
+export default () => startGame(task, generateQuestionAndAnswer);

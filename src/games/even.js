@@ -5,7 +5,7 @@ const minNumber = 0;
 const maxNumber = 100;
 
 const isEven = (number) => ((number % 2) === 0);
-const generateQuestionResult = () => {
+const generateQuestionAndAnswer = () => {
   const number = getRandomNumber(minNumber, maxNumber);
   return {
     question: number,
@@ -14,4 +14,4 @@ const generateQuestionResult = () => {
 };
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export default () => startGame(task, generateQuestionResult);
+export default () => startGame(task, generateQuestionAndAnswer);

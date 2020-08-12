@@ -14,7 +14,7 @@ const getProgression = (initialNumber, step) => {
   return progression;
 };
 
-const generateQuestionResult = () => {
+const generateQuestionAndAnswer = () => {
   const initialNumber = getRandomNumber(minNumber, maxNumber);
   const missingPosition = getRandomNumber(minMissingPositionNumber, progressionLength);
   const step = getRandomNumber(minNumber, maxNumber);
@@ -29,4 +29,4 @@ const generateQuestionResult = () => {
 
 const task = 'What number is missing in the progression?';
 
-export default () => startGame(task, generateQuestionResult);
+export default () => startGame(task, generateQuestionAndAnswer);
