@@ -16,9 +16,6 @@
     "url": "https://github.com/ArkadyKid/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/ArkadyKid/frontend-project-lvl1#readme",
-  "dependencies": {
-    "readline-sync": "^1.4.10"
-  },
   "bin": {
     "brain-even": "bin/brain-even.js",
     "brain-games": "bin/brain-games.js",
@@ -27,10 +24,13 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
+  "description": "",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
   "devDependencies": {
     "eslint": "^7.4.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0"
-  },
-  "description": ""
+  }
 }

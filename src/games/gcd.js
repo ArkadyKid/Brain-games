@@ -11,7 +11,7 @@ const getGcd = (firstNumber, secondNumber) => {
   return Math.abs(firstNumber);
 };
 
-const generateQuestionResult = () => {
+const generateQuestionAndAnswer = () => {
   const firstNumber = getRandomNumber(minNumber, maxNumber);
   const secondNumber = getRandomNumber(minNumber, maxNumber);
   return {
@@ -22,4 +22,4 @@ const generateQuestionResult = () => {
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-export default () => startGame(task, generateQuestionResult);
+export default () => startGame(task, generateQuestionAndAnswer);

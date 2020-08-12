@@ -1,28 +1,28 @@
 import getRandomNumber from '../utils.js';
 import startGame from '../index.js';
 
-const numbersCount = 10;
+const progressionLength = 10;
 const minMissingPositionNumber = 1;
 const minNumber = 0;
 const maxNumber = 100;
 
 const getProgression = (initialNumber, step) => {
-  const arr = [];
-  for (let i = 0; i < numbersCount; i += 1) {
-    arr.push(initialNumber + step * i);
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(initialNumber + step * i);
   }
-  return arr;
+  return progression;
 };
 
 const generateQuestionResult = () => {
   const initialNumber = getRandomNumber(minNumber, maxNumber);
-  const missingPosition = getRandomNumber(minMissingPositionNumber, numbersCount);
+  const missingPosition = getRandomNumber(minMissingPositionNumber, progressionLength);
   const step = getRandomNumber(minNumber, maxNumber);
-  const initialArr = getProgression(initialNumber, step);
-  const result = initialArr[missingPosition - 1];
-  initialArr[missingPosition - 1] = '..';
+  const initialProgression = getProgression(initialNumber, step);
+  const result = initialProgression[missingPosition - 1];
+  initialProgression[missingPosition - 1] = '..';
   return {
-    question: initialArr.join(' '),
+    question: initialProgression.join(' '),
     result: String(result),
   };
 };
