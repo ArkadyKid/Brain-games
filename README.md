@@ -8,7 +8,7 @@ Pack of some simple mathematics games.
 
 ## Requirements
 
-node v.13+
+node v13+
 
 ## Publish
 ````
